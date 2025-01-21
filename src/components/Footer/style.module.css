@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  margin-left: auto;
+}
