@@ -1,25 +1,47 @@
 import styles from "./style.module.css";
 
 interface Props {
-  // activeFilter: string;
-  onFilterChange: (filter: "all" | "active" | "completed") => void;
-  onClearCompleted: () => void;
+  activeFilter: string;
+  setFilter: (filter: "all" | "active" | "completed") => void;
+  clearCompleted: () => void;
   activeTodos: number;
 }
 
 const Footer: React.FC<Props> = ({
-  // activeFilter,
-  onFilterChange,
-  onClearCompleted,
+  activeFilter,
+  setFilter,
+  clearCompleted,
   activeTodos,
 }) => (
   <div className={styles.container}>
-    {activeTodos !== 0 && <p>{activeTodos} items left</p>}
+    {activeTodos !== 0 && (
+      <p className={styles.leftItems}>{activeTodos} items left</p>
+    )}
     <div className={styles.buttons}>
-      <button onClick={() => onFilterChange("all")}>All</button>
-      <button onClick={() => onFilterChange("active")}>Active</button>
-      <button onClick={() => onFilterChange("completed")}>Completed</button>
-      <button onClick={onClearCompleted}>Clear completed</button>
+      <button
+        onClick={() => setFilter("all")}
+        disabled={activeFilter === "all"}
+        className={styles.button}
+      >
+        All
+      </button>
+      <button
+        onClick={() => setFilter("active")}
+        disabled={activeFilter === "active"}
+        className={styles.button}
+      >
+        Active
+      </button>
+      <button
+        onClick={() => setFilter("completed")}
+        disabled={activeFilter === "completed"}
+        className={styles.button}
+      >
+        Completed
+      </button>
+      <button onClick={clearCompleted} className={styles.button}>
+        Clear completed
+      </button>
     </div>
   </div>
 );

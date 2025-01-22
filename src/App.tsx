@@ -2,12 +2,7 @@ import { useState, useEffect } from "react";
 import Input from "./components/Input/Input";
 import TodoList from "./components/TodoList/TodoList";
 import Footer from "./components/Footer/Footer";
-
-interface Todo {
-  id: number;
-  text: string;
-  completed: boolean;
-}
+import Todo from "./types";
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>(() => {
@@ -46,12 +41,12 @@ const App = () => {
 
   return (
     <div className="container">
-      <Input onAdd={addTodo} />
-      <TodoList todos={filteredTodos} onToggle={toggleTodo} />
+      <Input addTodo={addTodo} />
+      <TodoList todos={filteredTodos} toggleTodo={toggleTodo} />
       <Footer
-        // activeFilter={filter}
-        onFilterChange={setFilter}
-        onClearCompleted={clearCompleted}
+        activeFilter={filter}
+        setFilter={setFilter}
+        clearCompleted={clearCompleted}
         activeTodos={activeTodos}
       />
     </div>

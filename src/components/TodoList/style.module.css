@@ -1,5 +1,60 @@
 .container {
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 10px;
+}
+
+.list {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.firstList {
+  padding-top: 5px;
+  border-top: 1px solid #d8d8d8;
+}
+
+.ckeckboxWrapper {
+  position: relative;
+  margin: 5px 5px 0 0;
+}
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.input:checked + .checkbox {
+  background-image: url("./img/mark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+}
+
+.text {
+  width: 95%;
+  font-size: 20px;
+  font-weight: 100;
+  word-wrap: break-word;
+  cursor: default;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #ccc;
 }

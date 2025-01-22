@@ -1,3 +1,7 @@
+:root {
+  --main: #7997c1;
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("./assets/font/Montserrat-Regular.woff2") format("woff2");
@@ -62,10 +66,12 @@ button {
 
 body {
   font-family: "Montseratt", sans-serif;
+  background-color: #efefef;
 }
 
 .container {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+  padding: 50px 0;
 }

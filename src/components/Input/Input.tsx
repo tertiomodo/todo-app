@@ -2,15 +2,15 @@ import { useState } from "react";
 import styles from "./style.module.css";
 
 interface Props {
-  onAdd: (text: string) => void;
+  addTodo: (text: string) => void;
 }
 
-const Input: React.FC<Props> = ({ onAdd }) => {
+const Input: React.FC<Props> = ({ addTodo }) => {
   const [value, setValue] = useState("");
 
   const handleAdd = () => {
     if (value.trim()) {
-      onAdd(value);
+      addTodo(value);
       setValue("");
     }
   };
@@ -23,7 +23,7 @@ const Input: React.FC<Props> = ({ onAdd }) => {
 
   return (
     <div className={styles.container}>
-      <h1>todos</h1>
+      <h1 className={styles.header}>todos</h1>
       <input
         className={styles.input}
         type="text"
@@ -32,7 +32,9 @@ const Input: React.FC<Props> = ({ onAdd }) => {
         onKeyDown={handleKeyDown}
         placeholder="What needs to be done?"
       />
-      <button onClick={handleAdd}>Add</button>
+      <button onClick={handleAdd} className={styles.button}>
+        Add
+      </button>
     </div>
   );
 };

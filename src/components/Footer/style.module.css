@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -9,4 +10,29 @@
 .buttons {
   display: flex;
   margin-left: auto;
+}
+
+.leftItems {
+  font-size: 13px;
+}
+
+.button {
+  font-size: 13px;
+  transition: color 200ms ease-in-out;
+}
+
+.button:hover {
+  color: var(--main);
+}
+
+.button:not(:last-child) {
+  margin-right: 3px;
+}
+
+.button:disabled {
+  color: var(--main);
+  background-color: transparent;
+  cursor: auto;
+  border: 1px solid var(--main);
+  border-radius: 5px;
 }
