@@ -12,7 +12,6 @@ Simple Todo list app which saved your tasks in `localStorage`. You can add tasks
 - TypeScript
 - Vite
 - CSS modules
-- Jest
 
 ### For local running
 
